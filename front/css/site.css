@@ -1,0 +1,66 @@
+.red{
+    color: #FF0000;
+}
+
+.middleblack{
+
+}
+
+.bluebtn{
+    background: #00AAEF;
+    color: #FFF;
+}
+
+.title{
+    color: #FFF;
+}
+
+.sit-bar{
+    background:#01AAEF
+}
+
+.bar-title{
+    color: #FFFFFF;
+}
+
+.line-title{
+    display: block;
+    height: 2rem;
+    padding-right: .5rem;
+    line-height: 2rem;
+    background: #FFF;
+    border-bottom: solid 2px #00AAEF;
+    margin-top: 0.3rem;
+}
+
+.line-left{
+    float: left;
+    color: #FFF;
+    font-size: 0.85rem;
+    background: #00AAEF;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.line-right{
+    float: right;
+}
+
+
+
+.big-round-img{
+     width: 4rem;
+     height: 4rem;
+     border-radius: 50%;
+ }
+
+.middle-round-img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.small-round-img{
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+}

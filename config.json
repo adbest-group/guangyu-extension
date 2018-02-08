@@ -1,0 +1,6 @@
+{
+  "api":{
+    "getProductInfo":"/api/productInfo",
+    "getCommission":"/api/getCommission"
+  }
+}

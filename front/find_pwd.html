@@ -1,0 +1,170 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>注册</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta content="yes" name="apple-touch-fullscreen">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="stylesheet" href="css/light7.css">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/light7-swiper.css">
+<link rel="stylesheet" href="css/light7-swipeout.css">
+<link rel="stylesheet" href="css/app.css">
+<style>
+.content {
+	color: #999;
+}
+
+.button.button-fill.button-big {
+	line-height: 2.0rem;
+	height: 2.0rem;
+}
+
+.list-block {
+	margin: .75rem;
+}
+
+.content-block {
+	margin: .75rem 0;
+}
+
+.signup a {
+	color: #999;
+}
+</style>
+</head>
+<body style="position:static;width:300px;height:600px;">
+
+	<div class="page">
+		<header class="bar bar-nav sit-bar">
+			<button class="button button-link button-nav pull-left"
+				 id="goBack">
+				<span class="icon icon-left" style="color: #FFF;"></span>
+			</button>
+			<h1 class="title" style="font-size: 1rem">忘记密码</h1>
+		</header>
+		<div class="content">
+			<form id="formData">
+				<div class="page-login" style="margin-top: 2rem">
+					<div class="list-block inset text-center">
+						<ul>
+							<li>
+								<div class="item-content">
+									<div class="item-media">
+										<i class="icon icon-form-name"></i>
+									</div>
+									<div class="item-inner">
+										<div class="item-input">
+											<input class="input_enter" type="number"
+												placeholder="输入手机号码" name="phone">
+										</div>
+									</div>
+								</div>
+							</li>
+							
+							
+							<li>
+								<div class="item-content">
+									<div class="item-media">
+										<i class="icon icon-form-email"></i>
+									</div>
+									<div class="item-inner">
+										<div class="item-input">
+											<input class="input_enter" type="password"
+												placeholder="输入密码" name="pwd">
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-media">
+										<i class="icon icon-form-email"></i>
+									</div>
+									<div class="item-inner">
+										<div class="item-input">
+											<input class="input_enter" type="password"
+												placeholder="再次输入密码" name="repwd">
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-media">
+										<i class="icon icon-form-name"></i>
+									</div>
+									<div class="item-inner" style="padding:0">
+										<div class="item-input">
+											<input maxlength="4" class="input_enter" type="text" placeholder="输入验证码"
+												name="codeimage">
+										</div>
+										<div class="item-title label" style="width:100px;height:35px;">
+											 <img height="35"
+                                 alt="点击我更换图片" title="点击我更换图片"  class="codeimage" src="http://127.0.0.1/api/codeImage">
+										</div>
+										
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item-content">
+									<div class="item-media">
+										<i class="icon icon-form-name"></i>
+									</div>
+									<div class="item-inner">
+										<div class="item-input">
+											<input class="input_enter" type="text" placeholder="输入短信验证码"
+												name="code">
+										</div>
+										<div id="send" class="item-title label" style="width: 3rem;">
+											<a href="javascript:void(0);" id="send_btn"
+												style="color: #a0a0a0; font-size: 0.8rem;">发送</a>
+										</div>
+										<div id="timer" class="item-title label"
+											style="width: 3rem; display: none; color: orangered; font-size: 0.8rem;"></div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="content-block">
+						<p>
+							<a class="button button-big button-fill external"
+								data-transition='fade' id="submitreg">重置密码</a>
+						</p>
+
+
+					</div>
+
+				</div>
+
+				<input type="hidden" name="fanli_version"> <input
+					type="hidden" name="fanli_channel"> <input type="hidden"
+					name="fanli_did">
+
+
+
+
+			</form>
+
+		</div>
+	</div>
+
+
+	<script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+	<script type='text/javascript' src='js/light7.js' charset='utf-8'></script>
+	<script type='text/javascript' src='js/light7-swiper.js'
+		charset='utf-8'></script>
+	<script type='text/javascript' src='js/light7-swipeout.js'
+		charset='utf-8'></script>
+	<script type='text/javascript' src='js/pc.js' charset='utf-8'></script>
+    <script type='text/javascript' src='js/find_pwd.js' charset='utf-8'></script>
+
+</body>
+</html>

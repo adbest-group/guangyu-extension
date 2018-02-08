@@ -1,0 +1,20 @@
+.shop_info_style { 
+     width:200px;
+	 height:88px;
+	 position:fixed;
+	 left:0px;
+	 top:40%;
+	 _position:absolute;
+	 z-index:100000000000000000000000000;
+	 background:url('http://www.xmluren.com/fanli/img/redbag_bg.png') no-repeat;
+	 color:#f3e728;
+	 text-align:center;
+	 line-height:80px;
+	 filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+     -moz-background-size: 100% 100%;
+     background-size: 100% 100%;
+}
+.shop_info_style img{
+   vertical-align:middle;
+   padding-bottom:5px;
+}
