@@ -13,23 +13,28 @@
       "16": "smile.png",
       "48": "smile.png",
       "128": "smile.png" 
-    }, 
+    },
     "permissions": ["notifications","background", "tabs", "webRequest", "webRequestBlocking", "*://*/*","unlimitedStorage", "storage"],
     "background": {
        "scripts": ["j.js","background.js"]
     },
     
     "content_scripts": [
-       {
-        "matches": ["https://detail.tmall.com/item.htm*","https://item.taobao.com/item.htm*"],
-        "css": ["shop_info_style.css"],
-        "js": ["j.js", "taobao_detail_address_trans.js"],
-        "run_at":"document_start"
-        },
-       {
-        "matches": ["https://detail.tmall.com/item.htm*ali_trackid=2*","https://item.taobao.com/item.htm*ali_trackid=2*"],
-        "js": ["taobao_detail_address_trans2.js"]
-       }
+      {
+	      "matches": ["https://s.taobao.com/search*"],
+        "js": ["j.js", "taobao_search_list2.js"],
+        "run_at":"document_end"
+      },
+      {
+      "matches": ["https://detail.tmall.com/item.htm*","https://item.taobao.com/item.htm*"],
+      "css": ["shop_info_style.css"],
+      "js": ["j.js", "taobao_detail_address_trans.js"],
+      "run_at":"document_start"
+      },
+      {
+      "matches": ["https://detail.tmall.com/item.htm*ali_trackid=2*","https://item.taobao.com/item.htm*ali_trackid=2*"],
+      "js": ["taobao_detail_address_trans2.js"]
+      }
     ]
     
   } 

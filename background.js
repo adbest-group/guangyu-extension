@@ -43,7 +43,7 @@ function getProductInfo(msg,port){
     }
   });
 }
-function getCommission(msg,port){
+function getCommission(msg,port,type){
   $.ajax({
     type : "post",
     url : api.getCommission,
@@ -55,7 +55,7 @@ function getCommission(msg,port){
     success : function(data) {
       //拿到对应商品的返利金额并将数据发送给要展示在页面中(详情页、列表页)
       console.log(data)
-      port.postMessage({type:2,rebate:data})
+      port.postMessage({type:type,rebate:data})
     },
     error : function(XMLHttpRequest, textStatus, errorThrown) {
       console.log('请求失败')
@@ -73,8 +73,13 @@ function onConnectPort(port) {
     }
     if(msg.type === 2){
       console.log('接收到taobao_detail2页面的信息',msg)
-      // getCommission(msg,port)
+      // getCommission(msg,port,type)
       port.postMessage({type:2,rebate:['10','20']})
+    }
+    if(msg.type === 3){
+      console.log('接收到list页面的信息',msg)
+      // getCommission(msg,port,type)
+      port.postMessage({type:3,rebate:['10','20','30']})
     }
 	});
 }
