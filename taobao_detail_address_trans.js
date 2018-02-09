@@ -13,10 +13,9 @@ function detail_init(){
     }
     taobao_get_link_port.onMessage.addListener(function(data) {
       if(data.type === 1){
-        console.log('获取到background.js的信息:',data.link)
+        console.log('获取到background.js的信息:',data)
         //做跳转重定向
-
-        window.location.href = 'https://item.taobao.com/item.htm?id=562349182915&ali_trackid=2'
+        window.location.href = data.link
       }
     })
     //获取返利链接命令

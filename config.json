@@ -2,5 +2,6 @@
   "api":{
     "getProductInfo":"/api/productInfo",
     "getCommission":"/api/getCommission"
-  }
+  },
+  "baseUrl":"http://172.16.88.55:8082"
 }

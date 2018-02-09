@@ -1,6 +1,8 @@
 ﻿var api
+var baseUrl
 $.get('./config.json').done(function(data){
   api = data.api
+  baseUrl = data.baseUrl
 });
 // 格式化日期
 // Date:data fmt:时间格式
@@ -26,18 +28,20 @@ function getTime(date, fmt) {
 	return fmt;
 }
 function getProductInfo(msg,port){
+  console.log(msg.link)
   $.ajax({
     type : "post",
-    url : api.getProductInfo,
+    url : baseUrl+api.getProductInfo,
     contentType:"application/json",
     dataType : "json",// 返回json格式的数据
-    data : {
+    data : JSON.stringify({
+      "user_id":"",
       "product_url" : msg.link
-    },
+    }),
     timeout : 15000,
     success : function(json) {
       console.log(json)
-      port.postMessage({type:1,link:json.shortLinkUrl});
+      port.postMessage({type:1,link:json.ret.result.shortLinkUrl});
     },
     error : function(XMLHttpRequest, textStatus, errorThrown) {
       console.log('请求失败')
@@ -47,16 +51,17 @@ function getProductInfo(msg,port){
 function getCommission(msg,port,type){
   $.ajax({
     type : "post",
-    url : api.getCommission,
+    url : baseUrl+api.getCommission,
     contentType:"application/json",
     dataType : "json",// 返回json格式的数据
-    data : {
+    data : JSON.stringify({
+      "user_id":"",
       "num_iids" : msg.ids.join(',')
-    },
+    }),
     timeout : 15000,
     success : function(data) {
       //拿到对应商品的返利金额并将数据发送给要展示在页面中(详情页、列表页)
-      console.log(data)
+      console.log('请求到的数据为：',data)
       port.postMessage({type:type,rebate:data})
     },
     error : function(XMLHttpRequest, textStatus, errorThrown) {
@@ -70,8 +75,8 @@ function onConnectPort(port) {
     console.log(msg)
     if(msg.type === 1){
       console.log('接收到taobao_detail页面的信息',msg)
-      // getProductInfo(msg,port)
-      port.postMessage({type:1,link:'假数据link'});
+      getProductInfo(msg,port)
+      // port.postMessage({type:1,link:'假数据link'});
     }
     if(msg.type === 2){
       console.log('接收到taobao_detail2页面的信息',msg)
