@@ -29,6 +29,7 @@ function getProductInfo(msg,port){
   $.ajax({
     type : "post",
     url : api.getProductInfo,
+    contentType:"application/json",
     dataType : "json",// 返回json格式的数据
     data : {
       "product_url" : msg.link
@@ -47,6 +48,7 @@ function getCommission(msg,port,type){
   $.ajax({
     type : "post",
     url : api.getCommission,
+    contentType:"application/json",
     dataType : "json",// 返回json格式的数据
     data : {
       "num_iids" : msg.ids.join(',')
