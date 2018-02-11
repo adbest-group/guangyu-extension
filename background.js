@@ -56,7 +56,7 @@ function getCommission(msg,port,type){
     dataType : "json",// 返回json格式的数据
     data : JSON.stringify({
       "user_id":"",
-      "num_iids" : msg.ids.join(',')
+      "num_iids" : msg.ids
     }),
     timeout : 15000,
     success : function(data) {
@@ -80,13 +80,13 @@ function onConnectPort(port) {
     }
     if(msg.type === 2){
       console.log('接收到taobao_detail2页面的信息',msg)
-      // getCommission(msg,port,type)
-      port.postMessage({type:2,rebate:['10','20']})
+      getCommission(msg,port,msg.type)
+      // port.postMessage({type:2,rebate:['10','20']})
     }
     if(msg.type === 3){
       console.log('接收到list页面的信息',msg)
-      // getCommission(msg,port,type)
-      port.postMessage({type:3,rebate:['10','20','30']})
+      getCommission(msg,port,msg.type)
+      // port.postMessage({type:3,rebate:['10','20','30']})
     }
 	});
 }
@@ -117,7 +117,7 @@ var opt_extraInfoSpec = [ "blocking" ];
 //安装时的操作
 if(chrome.runtime.onInstalled){
 	chrome.runtime.onInstalled.addListener(function(info){
-		chrome.tabs.create({url:'http://www.baidu.com'});
+		// chrome.tabs.create({url:'http://www.baidu.com'});
 	});
 }else{
 	

@@ -1,5 +1,5 @@
 var $j = jQuery.noConflict(); 
-var lrkj_proportion=0.5;
+// var lrkj_proportion=0.5;
 
 //和back通信的桥梁
 var fanli_get_statues_port;	
@@ -11,14 +11,14 @@ if(chrome.extension.connect){
 
 fanli_get_statues_port.onMessage.addListener(function(data) {
   console.log('列表页接到的信息是：',data.rebate)
-  var nums = data.rebate
+  var nums = data.rebate.ret.result.commissions.split(',')
   setNum(nums)
 });
 function setNum(nums){
   var s=$j("#mainsrp-itemlist .J_MouserOnverReq.item");
   for(var i=0;i<s.length;i++){
     var t_item=s[i];
-    number=parseFloat(nums[i])*lrkj_proportion;
+    number=parseFloat(nums[i]);
     number = ~~(number * 100) / 100;
     if(number==0){
       number='无返利';
