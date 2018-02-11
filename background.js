@@ -1,9 +1,13 @@
-﻿var api
-var baseUrl
-$.get('./config.json').done(function(data){
-  api = data.api
-  baseUrl = data.baseUrl
-});
+﻿var config = {
+  "api":{
+    "getProductInfo":"/api/productInfo",
+    "getCommission":"/api/getCommission"
+  },
+  "baseUrl":"https://plug.abigpush.com"
+}
+var api = config.api
+var baseUrl = config.baseUrl
+
 // 格式化日期
 // Date:data fmt:时间格式
 function getTime(date, fmt) {
