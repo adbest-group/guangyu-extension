@@ -12,7 +12,9 @@
     fanli_get_statues_port.onMessage.addListener(function(data) {
       console.log('taobao_detail2接收到的消息是:',data)
       var commission = data.rebate.ret.result.commissions
-      inser_info2(commission)
+      if(parseFloat(commission)){
+        inser_info2(commission)
+      }
     });
     //获取返利是否开启命令
     var id = getParam('id')

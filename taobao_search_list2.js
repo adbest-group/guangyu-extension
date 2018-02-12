@@ -23,7 +23,7 @@ function setNum(nums){
     if(number==0){
       number='无返利';
     }else{
-      number='返:￥'+number
+      number='返￥'+number
     }
     $j(t_item).find(".icons").append('<li style="color:#f40;font-size:13px;float:right;">'+number+'</li>');					
   }
