@@ -1,6 +1,6 @@
 {
-    "name": "斌哥返利",  
-    "version": "1.0.0",
+    "name": "逛鱼返利",  
+    "version": "1.0.1",
     "manifest_version": 2,  
     "description": "网购的福音，淘宝购物返利神器，省钱的的最佳利器",  
     "browser_action": {  
